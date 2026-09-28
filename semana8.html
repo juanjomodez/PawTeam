@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 8 | Paw Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo de Paw Team">
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#concepto">Concepto</a>
+            <a href="index.html#bitacora">Bitácora</a>
+            <a href="index.html#demo">Demo</a>
+            <a href="index.html#teaser">Teaser</a>
+        </nav>
+
+    </header>
+
+    <main>
+        <!-- ENCABEZADO DE LA SEMANA -->
+        <section class="entrada-header">
+            <p>BITÁCORA DE DESARROLLO</p>
+            <h1>Semana 8</h1>
+            <h2>Graybox del Core Loop</h2>
+            <p>
+                Durante esta semana trabajamos en la construcción del primer
+                graybox del Core Loop de Paw Team.
+            </p>
+
+        </section>
+
+        <!-- INTRODUCCIÓN -->
+        <section class="entrada">
+            <h2>¿Qué queríamos probar?</h2>
+            <p>
+                El objetivo de esta semana fue construir el primer graybox jugable
+                de nuestro Core Loop y comprobar que las principales acciones de
+                Paw Team funcionaran dentro de una misma experiencia.
+
+                Partíamos con una ventaja, ya que contábamos con los dos personajes
+                principales, Lupe y Spike, junto con sus animaciones. Esto nos permitió
+                enfocarnos en integrar sus movimientos, el mapa y las mecánicas
+                principales para crear una primera versión jugable.
+            </p>
+        </section>
+
+        <!-- 01 LUMENS -->
+        <section class="desarrollo">
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">01</span>
+                <h2>Lumens</h2>
+                <p>
+                    Aquí explicaremos qué se trabajó en Lumens y cuál era su función
+                    dentro del juego.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video controls>
+                    <source src="videos/semana8-lumens.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+        </section>
+
+        <!-- 02 MAPA -->
+        <section class="desarrollo invertido">
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">02</span>
+                <h2>Mapa</h2>
+                <p>
+                    Aquí explicaremos qué se trabajó en el mapa y cómo se organizó
+                    el espacio para las pruebas del Core Loop.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video controls>
+                    <source src="videos/semana8-mapa.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+        </section>
+
+        <!-- 03 COOPERATIVO -->
+        <section class="desarrollo">
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">03</span>
+                <h2>Cooperativo</h2>
+                <p>
+                    Para la parte cooperativa ya contábamos con un botón que, al ser presionado,
+                    eliminaba un cubo de cristal que protegía un saltarín. A partir de este elemento,
+                    agregamos un nuevo botón que, al pararse sobre él, hace que unas plataformas salgan
+                    para permitir el paso del jugador.
+                </p>
+
+                <p>
+                    El botón debe mantenerse presionado para que las plataformas permanezcan activas.
+                    Si el jugador se baja, las plataformas vuelven a su posición original. De esta
+                    forma, buscamos que los jugadores necesiten trabajar juntos para superar los
+                    obstáculos.
+                </p>
+
+                <p>
+                    Por ejemplo, uno de los jugadores debe mantenerse sobre el botón para que el otro
+                    pueda avanzar por las plataformas. Una vez que logra avanzar, puede activar el
+                    segundo botón para eliminar el cubo de cristal y permitir que ambos continúen.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+
+                <video controls>
+
+                    <source src="videos/semana8-cooperativo.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+        </section>
+
+
+        <!-- 04 RESULTADO FINAL -->
+
+        <section class="desarrollo-final">
+
+            <span class="desarrollo-numero">04</span>
+
+            <h2>Resultado final</h2>
+
+            <p class="descripcion-final">
+                Finalmente reunimos los elementos trabajados durante la semana
+                para probar el Core Loop en conjunto.
+            </p>
+
+
+            <!-- VIDEO FINAL -->
+
+            <div class="desarrollo-video">
+
+                <video controls>
+
+                    <source src="videos/semana8-final.mp4" type="video/mp4">
+
+                    Tu navegador no puede reproducir este video.
+
+                </video>
+
+            </div>
+
+
+            <!-- QUÉ OBSERVAMOS -->
+
+            <div class="resultado-texto">
+
+                <h3>¿Qué observamos o descubrimos?</h3>
+
+                <p>
+                    Aquí explicaremos qué funcionó durante las pruebas,
+                    qué problemas encontramos y qué aprendimos.
+                </p>
+
+            </div>
+
+
+            <!-- SIGUIENTE ITERACIÓN -->
+
+            <div class="resultado-texto">
+
+                <h3>¿Qué cambiaremos en la siguiente versión?</h3>
+
+                <ul>
+
+                    <li>
+                        Modificaremos el diseño de las Lumens para que se vean
+                        de manera más estética.
+                    </li>
+
+                    <li>
+                        Crearemos el mapa para el primer nivel con obstáculos
+                        y assets para decorarlo.
+                    </li>
+
+                    <li>
+                        Se modificará el funcionamiento del mapa para que se
+                        actualice a medida que el jugador avance.
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div>
+            <img src="img/logo.png" alt="Logo de Paw Team">
+        </div>
+        <h2>Paw Team</h2>
+        <p>
+            Bitácora de desarrollo del videojuego.
+        </p>
+
+        <div class="integrantes">
+            <h3>Integrantes</h3>
+            <div class="integrantes-grid">
+
+                <p>Julian Esteban Cruz Camargo</p>
+                <p>Juan Pablo Alba Ballesteros</p>
+                <p>Juan Jose Mosquera Bermudez</p>
+                <p>Alejandro Quintero Beltran</p>
+                <p>David Elias Castro Ochoa</p>
+                <p>Julian Sanchez Pasaje</p>
+            </div>
+        </div>
+        <p class="copyright">
+            © 2026 Paw Team
+        </p>
+    </footer>
+</body>
+
+</html>
