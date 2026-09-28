@@ -1,0 +1,570 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #111111;
+    color: #ffffff;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ============================= */
+/* HEADER */
+/* ============================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 40px;
+
+    background-color: #111111;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    border-bottom: 1px solid #333333;
+}
+
+header img {
+    width: 90px;
+}
+
+header nav {
+    display: flex;
+    gap: 30px;
+}
+
+header nav a {
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #e00000;
+}
+
+
+/* ============================= */
+/* INICIO */
+/* ============================= */
+
+#inicio {
+    min-height: 80vh;
+
+    display: flex;
+    align-items: center;
+
+    gap: 60px;
+
+    padding: 80px 60px;
+}
+
+#inicio > div {
+    flex: 1;
+}
+
+#inicio > div:first-child {
+    display: flex;
+    justify-content: center;
+}
+
+#inicio > div:first-child img {
+    width: 70%;
+    max-width: 400px;
+}
+
+#inicio h1 {
+    font-size: 60px;
+
+    margin-bottom: 20px;
+}
+
+#inicio p {
+    font-size: 18px;
+
+    margin-bottom: 15px;
+
+    line-height: 1.5;
+}
+
+#inicio h2 {
+    font-size: 24px;
+
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+
+/* ============================= */
+/* CONCEPTO */
+/* ============================= */
+
+#concepto {
+    padding: 80px 60px;
+
+    border-top: 1px solid #333333;
+
+    text-align: center;
+}
+
+#concepto h2 {
+    font-size: 38px;
+
+    margin-bottom: 40px;
+}
+
+#concepto > div {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+#concepto article {
+    padding: 30px;
+
+    background-color: #181818;
+
+    border: 2px solid #333333;
+
+    border-radius: 12px;
+
+    text-align: left;
+
+    transition: 0.3s;
+}
+
+#concepto article:hover {
+    transform: translateY(-5px);
+
+    border-color: #e00000;
+}
+
+#concepto article h3 {
+    font-size: 24px;
+
+    margin-bottom: 15px;
+}
+
+#concepto article p {
+    line-height: 1.6;
+
+    color: #cccccc;
+}
+
+
+/* ============================= */
+/* BITÁCORA */
+/* ============================= */
+
+#bitacora {
+    padding: 80px 60px;
+
+    border-top: 1px solid #333333;
+
+    text-align: center;
+}
+
+#bitacora h2 {
+    font-size: 38px;
+
+    margin-bottom: 10px;
+}
+
+#bitacora > p {
+    color: #bbbbbb;
+
+    margin-bottom: 45px;
+}
+
+
+/* GRID DE SEMANAS */
+
+#bitacora > div {
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* CARD DE SEMANA */
+
+#bitacora article {
+    background-color: #181818;
+
+    border: 2px solid #333333;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    transition: 0.3s;
+}
+
+#bitacora article:hover {
+    transform: translateY(-8px);
+
+    border-color: #e00000;
+}
+
+#bitacora article a {
+    display: block;
+}
+
+
+/* IMAGEN */
+
+#bitacora article img {
+    width: 100%;
+
+    height: 180px;
+
+    object-fit: cover;
+}
+
+
+/* TEXTO */
+
+#bitacora article h3 {
+    font-size: 22px;
+
+    margin: 20px 15px 10px;
+}
+
+#bitacora article p {
+    color: #bbbbbb;
+
+    margin: 0 15px 15px;
+
+    line-height: 1.5;
+}
+
+#bitacora article span {
+    display: block;
+
+    color: #e00000;
+
+    font-weight: bold;
+
+    margin: 0 15px 20px;
+}
+
+
+/* ============================= */
+/* DEMO */
+/* ============================= */
+
+#demo {
+    padding: 80px 60px;
+
+    border-top: 1px solid #333333;
+
+    text-align: center;
+}
+
+#demo h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+#demo > p {
+    margin-bottom: 35px;
+
+    color: #bbbbbb;
+}
+
+#demo > div {
+    max-width: 1000px;
+
+    min-height: 450px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background-color: #181818;
+
+    border: 2px solid #333333;
+
+    border-radius: 12px;
+}
+
+#demo > div p {
+    font-size: 20px;
+
+    color: #888888;
+}
+
+
+/* ============================= */
+/* TEASER */
+/* ============================= */
+
+#teaser {
+    padding: 80px 60px;
+
+    border-top: 1px solid #333333;
+
+    text-align: center;
+}
+
+#teaser h2 {
+    font-size: 38px;
+
+    margin-bottom: 15px;
+}
+
+#teaser p {
+    color: #bbbbbb;
+
+    line-height: 1.6;
+}
+
+
+/* ============================= */
+/* FOOTER */
+/* ============================= */
+
+footer {
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background-color: #0a0a0a;
+
+    border-top: 1px solid #333333;
+}
+
+footer img {
+    width: 90px;
+
+    margin: 0 auto 20px;
+}
+
+footer p {
+    margin-bottom: 10px;
+}
+
+footer p:first-of-type {
+    font-size: 22px;
+
+    font-weight: bold;
+}
+
+footer p:last-of-type {
+    font-size: 14px;
+
+    color: #888888;
+}
+
+
+/* ============================= */
+/* RESPONSIVE */
+/* ============================= */
+
+@media (max-width: 900px) {
+
+    header {
+        padding: 15px 25px;
+    }
+
+    header nav {
+        gap: 15px;
+    }
+
+
+    /* INICIO */
+
+    #inicio {
+        padding: 60px 30px;
+
+        gap: 30px;
+    }
+
+    #inicio h1 {
+        font-size: 45px;
+    }
+
+
+    /* CONCEPTO */
+
+    #concepto {
+        padding: 60px 30px;
+    }
+
+
+    /* BITÁCORA */
+
+    #bitacora {
+        padding: 60px 30px;
+    }
+
+    #bitacora > div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    /* DEMO */
+
+    #demo {
+        padding: 60px 30px;
+    }
+
+
+    /* TEASER */
+
+    #teaser {
+        padding: 60px 30px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    /* HEADER */
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px 20px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    /* INICIO */
+
+    #inicio {
+        flex-direction: column;
+
+        text-align: center;
+
+        padding: 60px 25px;
+    }
+
+    #inicio > div:first-child img {
+        width: 60%;
+
+        max-width: 250px;
+    }
+
+    #inicio h1 {
+        font-size: 40px;
+    }
+
+    #inicio p {
+        font-size: 16px;
+    }
+
+
+    /* CONCEPTO */
+
+    #concepto {
+        padding: 60px 25px;
+    }
+
+    #concepto h2 {
+        font-size: 32px;
+    }
+
+    #concepto > div {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* BITÁCORA */
+
+    #bitacora {
+        padding: 60px 25px;
+    }
+
+    #bitacora h2 {
+        font-size: 32px;
+    }
+
+    #bitacora > div {
+        grid-template-columns: 1fr;
+    }
+
+    #bitacora article img {
+        height: 220px;
+    }
+
+
+    /* DEMO */
+
+    #demo {
+        padding: 60px 25px;
+    }
+
+    #demo h2 {
+        font-size: 32px;
+    }
+
+    #demo > div {
+        min-height: 300px;
+    }
+
+
+    /* TEASER */
+
+    #teaser {
+        padding: 60px 25px;
+    }
+
+    #teaser h2 {
+        font-size: 32px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        padding: 40px 20px;
+    }
+}
