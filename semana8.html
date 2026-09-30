@@ -7,6 +7,7 @@
     <title>Semana 8 | Paw Team</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <!-- HEADER -->
     <header>
@@ -60,8 +61,27 @@
                 <span class="desarrollo-numero">01</span>
                 <h2>Lumens</h2>
                 <p>
-                    Aquí explicaremos qué se trabajó en Lumens y cuál era su función
-                    dentro del juego.
+                    Los Lumens son la moneda principal de Paw Team. Los jugadores pueden encontrarlos
+                    mientras recorren el mapa y sirven para comprar objetos, conseguir mejoras o pagar
+                    algunas acciones dentro del juego, como recuperar la vida del personaje después de
+                    ser derrotado.
+                </p>
+
+                <p>
+                    Para implementarlos, creamos un objeto provisional que funciona como Lumen dentro
+                    del mapa. A este objeto le agregamos un Collider, un Rigidbody y el script
+                    <strong>LumenRecolectable</strong>. El Collider permite detectar cuando uno de los
+                    personajes toca el Lumen y el Rigidbody ayuda a que Unity pueda reconocer esta
+                    interacción. Cuando Lupe o Spike lo tocan, el programa revisa que el objeto tenga
+                    la etiqueta Player. Si reconoce que es uno de los jugadores, suma un Lumen al
+                    contador y elimina el objeto del escenario para evitar que pueda recogerse otra vez.
+                </p>
+
+                <p>
+                    El contador funciona con otro script llamado <strong>LumensContador</strong>. Este
+                    guarda la cantidad de Lumens que ha recogido el equipo y actualiza el número que
+                    aparece en pantalla. Por ejemplo, si el jugador tiene x5 y recoge otro Lumen,
+                    el contador cambia a x6.
                 </p>
             </div>
 
@@ -79,8 +99,25 @@
                 <span class="desarrollo-numero">02</span>
                 <h2>Mapa</h2>
                 <p>
-                    Aquí explicaremos qué se trabajó en el mapa y cómo se organizó
-                    el espacio para las pruebas del Core Loop.
+                    Para crear el minimapa utilizamos una segunda cámara, independiente de la cámara principal del
+                    juego,
+                    configurada en modo Ortográfico y ubicada sobre el personaje con una rotación en X de 90°. Esta
+                    cámara
+                    permite mostrar el mundo desde una vista superior en tiempo real.
+                </p>
+
+                <p>
+                    En lugar de mostrar esta cámara directamente en pantalla, hicimos que renderizara su vista en una
+                    Render Texture. Luego, esta textura se muestra en el HUD mediante un Raw Image ubicado en una de las
+                    esquinas de la pantalla, permitiendo visualizar el entorno sin tener que crear un mapa manualmente.
+                </p>
+
+                <p>
+                    Para mantener la vista actualizada, creamos el script <strong>MinimapFollow</strong>, encargado de
+                    hacer
+                    que la cámara siga constantemente al jugador. El script actualiza su posición en cada frame
+                    utilizando
+                    un offset de altura para mantener la cámara sobre el personaje.
                 </p>
             </div>
 
@@ -169,8 +206,21 @@
                 <h3>¿Qué observamos o descubrimos?</h3>
 
                 <p>
-                    Aquí explicaremos qué funcionó durante las pruebas,
-                    qué problemas encontramos y qué aprendimos.
+                    Durante las pruebas observamos que algunas mecánicas todavía necesitan ajustes para funcionar
+                    correctamente.
+                    El sistema de combate presentó problemas en su funcionamiento y las mecánicas cooperativas necesitan
+                    una mejor
+                    planificación para que sean retadoras, pero también intuitivas para los jugadores.
+                </p>
+
+                <p>
+                    También descubrimos que la organización del escenario influye bastante en la experiencia, por lo que
+                    algunos
+                    elementos deben distribuirse de una manera más clara. En general, las pruebas nos permitieron
+                    identificar estos
+                    problemas y entender qué aspectos debemos seguir trabajando, teniendo en cuenta que el juego todavía
+                    se encuentra
+                    en una etapa temprana de desarrollo.
                 </p>
 
             </div>
