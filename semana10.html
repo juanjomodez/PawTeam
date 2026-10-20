@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 10 | Paw Team</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+        <div>
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo de Paw Team">
+            </a>
+        </div>
+
+        <nav>
+            <a href="index.html#inicio">Inicio</a>
+            <a href="index.html#concepto">Concepto</a>
+            <a href="index.html#bitacora">Bitácora</a>
+            <a href="index.html#demo">Demo</a>
+            <a href="index.html#teaser">Teaser</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ENCABEZADO DE LA SEMANA -->
+
+        <section class="entrada-header">
+            <p>BITÁCORA DE DESARROLLO</p>
+            <h1>Semana 10</h1>
+            <h2>Mejoras visuales y nuevas mecánicas</h2>
+            <p>
+                Durante esta semana continuamos desarrollando Paw Team,
+                mejorando la apariencia del escenario, la interfaz y
+                diferentes mecánicas para acercarnos a una versión más completa del juego.
+            </p>
+        </section>
+
+        <div class="semana-portada">
+            <img src="img/semana8.jpg" alt="Semana 8 de Paw Team">
+        </div>
+
+
+        <!-- INTRODUCCIÓN -->
+
+        <section class="entrada">
+            <h2>¿Qué queríamos lograr?</h2>
+
+            <p>
+                El objetivo principal de esta semana fue avanzar en los requerimientos
+                necesarios para preparar el video teaser de Paw Team y seguir mejorando
+                el estado general del juego. Nos enfocamos especialmente en dejar atrás
+                el graybox, incorporando colores, modelos y elementos visuales que nos
+                permitieran tener una versión más cercana a lo que queremos conseguir.
+            </p>
+
+            <p>
+                También trabajamos en la interfaz, las mecánicas de muerte y recuperación,
+                la recolección de Lumens y la selección de personajes. Estos avances nos
+                permitieron darle más identidad al juego y continuar construyendo una
+                experiencia que podamos mostrar en el teaser.
+            </p>
+        </section>
+
+
+        <!-- 01 TILEMAP -->
+
+        <section class="desarrollo">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">01</span>
+                <h2>Tilemap 3D</h2>
+
+                <p>
+                    Durante esta semana creamos en Blender un tilemap 3D que utilizaremos
+                    para construir las estructuras del escenario del bosque. Este conjunto
+                    de piezas nos permite diseñar y organizar diferentes partes del mapa
+                    de una manera más sencilla.
+                </p>
+
+                <p>
+                    Gracias a este sistema podemos combinar las estructuras y adaptar
+                    el escenario según nuestras necesidades, facilitando la decoración
+                    del nivel y permitiéndonos modificar su distribución sin tener que
+                    crear cada elemento desde cero.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <img src="img/semana10-tilemap.jpeg" alt="Tilemap 3D creado en Blender para el escenario del bosque">
+            </div>
+
+        </section>
+
+
+        <!-- 02 UI -->
+
+        <section class="desarrollo invertido">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">02</span>
+                <h2>Interfaz y mapa</h2>
+
+                <p>
+                    Utilizamos el tilemap para continuar construyendo la versión actual
+                    del mapa del bosque, incorporando las estructuras y los elementos
+                    visuales seleccionados. De esta manera, el escenario empieza a tener
+                    una apariencia más definida y deja atrás el aspecto básico del graybox.
+                </p>
+
+                <p>
+                    También reorganizamos la interfaz para mostrar por separado las monedas
+                    de cada personaje. Los Lumens de Lupe aparecen en el lado izquierdo
+                    de la pantalla, mientras que los de Spike se muestran en el derecho.
+                    Así, cada jugador puede identificar con mayor facilidad sus propias monedas.
+                </p>
+
+                <p>
+                    Además, reemplazamos la imagen provisional de Spike, que anteriormente
+                    tenía un tinte naranja, por su diseño actual. Este cambio ayuda a que
+                    la interfaz represente mejor la identidad visual de los personajes.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <img src="img/semana10-ui.jpeg" alt="Versión actual del mapa del bosque y la interfaz de Paw Team">
+            </div>
+
+        </section>
+
+
+        <!-- 03 MUERTES -->
+
+        <section class="desarrollo">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">03</span>
+                <h2>Muerte por caída al agua</h2>
+
+                <p>
+                    Implementamos una mecánica para evitar que el personaje quede fuera
+                    del escenario cuando cae al agua. Al producirse la caída, el juego
+                    devuelve al personaje a la posición en la que se encontraba antes
+                    de caer, permitiéndole continuar desde una zona segura.
+                </p>
+
+                <p>
+                    Con este comportamiento buscamos que los jugadores puedan recuperarse
+                    de una caída sin tener que reiniciar la partida y que el recorrido
+                    por el escenario sea más fluido.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/semana10-muerte-agua.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+
+        </section>
+
+
+        <!-- 04 MUERTE POR ENEMIGOS -->
+
+        <section class="desarrollo invertido">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">04</span>
+                <h2>Personaje derribado</h2>
+
+                <p>
+                    También avanzamos en la mecánica que se activa cuando un enemigo
+                    derrota a uno de los personajes. Por ahora, como todavía estamos
+                    trabajando en el aspecto visual de los enemigos y en los detalles
+                    de esta interacción, el personaje derribado se representa mediante
+                    un cubo que indica su estado de herido.
+                </p>
+
+                <p>
+                    En esta situación, el otro jugador debe acercarse al personaje
+                    derribado para ayudarlo a levantarse. De esta manera, comenzamos
+                    a implementar una mecánica que refuerza la cooperación y la
+                    importancia de apoyarse entre Lupe y Spike durante la partida.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/semana10-muerte-enemigo.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+
+        </section>
+
+
+        <!-- 05 LUMENS -->
+
+        <section class="desarrollo">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">05</span>
+                <h2>Modelo y animación de Lumens</h2>
+
+                <p>
+                    Durante esta semana mejoramos la apariencia de los Lumens,
+                    incorporándoles un modelo propio y una animación para que
+                    se integren mejor con el estilo visual de Paw Team.
+                </p>
+
+                <p>
+                    En el video se puede observar cómo los personajes recogen
+                    estas monedas dentro del escenario. Por el momento, los Lumens
+                    permanecen estáticos en el mapa, por lo que su distribución
+                    y movimiento son aspectos que podremos seguir mejorando
+                    en futuras versiones.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/semana10-lumens.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+
+        </section>
+
+
+        <!-- 06 SELECCIÓN DE PERSONAJE -->
+
+        <section class="desarrollo invertido">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">06</span>
+                <h2>Selección de personajes</h2>
+
+                <p>
+                    Incorporamos una interfaz de selección de personajes en la que
+                    cada jugador puede escoger si quiere jugar como Lupe o como Spike.
+                    Con esta pantalla buscamos que ambos jugadores puedan elegir
+                    su personaje antes de comenzar la partida.
+                </p>
+
+                <p>
+                    Este elemento también nos permite avanzar en la organización
+                    del flujo del juego, preparando la transición entre la selección
+                    de personajes y el inicio de la experiencia cooperativa.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <img src="img/semana10-seleccion-personaje.png" alt="Interfaz de selección de personajes Lupe y Spike">
+            </div>
+
+        </section>
+
+
+        <!-- 07 ENEMIGO -->
+
+        <section class="desarrollo">
+
+            <div class="desarrollo-contenido">
+                <span class="desarrollo-numero">07</span>
+                <h2>Ferocan paso rápido</h2>
+
+                <p>
+                    Retomamos el trabajo realizado anteriormente en el Ferocan
+                    paso rápido. En la revisión pasada ya contábamos con sus
+                    animaciones de prueba, pero todavía era necesario corregir
+                    y ajustar su rig para que el modelo pudiera moverse correctamente.
+                </p>
+
+                <p>
+                    En esta versión logramos mejorar el rig e incorporar al enemigo
+                    dentro del juego con sus animaciones. Aunque todavía falta
+                    implementar y pulir su comportamiento, este avance nos acerca
+                    a tener enemigos funcionales dentro del escenario.
+                </p>
+            </div>
+
+            <div class="desarrollo-video">
+                <video autoplay muted loop playsinline>
+                    <source src="videos/semana10-ferocan.mp4" type="video/mp4">
+                    Tu navegador no puede reproducir este video.
+                </video>
+            </div>
+
+        </section>
+
+
+        <!-- 08 RESULTADO FINAL -->
+
+        <section class="desarrollo-final">
+
+            <span class="desarrollo-numero">08</span>
+
+            <h2>Resultado de la semana</h2>
+
+            <p class="descripcion-final">
+                Los avances de esta semana nos permitieron mejorar tanto
+                la apariencia de Paw Team como algunas de sus mecánicas,
+                acercándonos a una versión más completa para preparar el teaser.
+            </p>
+
+
+            <!-- QUÉ OBSERVAMOS -->
+
+            <div class="resultado-texto">
+
+                <h3>¿Qué observamos o descubrimos?</h3>
+
+                <p>
+                    Durante el desarrollo observamos que incorporar modelos,
+                    animaciones y colores ayuda a que el juego tenga una identidad
+                    visual más clara. También avanzamos en mecánicas importantes,
+                    como la recuperación de personajes y la recolección de Lumens,
+                    además de mejorar la interfaz para distinguir a los dos jugadores.
+                </p>
+
+                <p>
+                    Sin embargo, todavía hay sistemas que necesitan más trabajo.
+                    El enemigo ya cuenta con sus animaciones, pero falta desarrollar
+                    su comportamiento, y algunas mecánicas todavía se encuentran
+                    en una fase inicial. Además, aunque el mapa tiene una apariencia
+                    más definida, aún necesitamos darle un propósito y organizar
+                    mejor el recorrido de los jugadores.
+                </p>
+
+            </div>
+
+
+            <!-- SIGUIENTE ITERACIÓN -->
+
+            <div class="resultado-texto">
+
+                <h3>¿Qué cambiaremos en la siguiente versión?</h3>
+
+                <ul>
+                    <li>
+                        Implementaremos enemigos medianos y grandes para ampliar
+                        la variedad de desafíos dentro del juego.
+                    </li>
+
+                    <li>
+                        Puliremos las animaciones de los personajes, especialmente
+                        las relacionadas con estados como estar derribado
+                        y levantarse.
+                    </li>
+
+                    <li>
+                        Desarrollaremos el flujo de la partida, definiendo mejor
+                        cómo avanzan los jugadores y qué objetivos deben cumplir,
+                        para que el escenario no se sienta como un mundo vacío.
+                    </li>
+                </ul>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div>
+            <img src="img/logo.png" alt="Logo de Paw Team">
+        </div>
+
+        <h2>Paw Team</h2>
+
+        <p>
+            Bitácora de desarrollo del videojuego.
+        </p>
+
+        <div class="integrantes">
+            <h3>Integrantes</h3>
+
+            <div class="integrantes-grid">
+                <p>Julian Esteban Cruz Camargo</p>
+                <p>Juan Pablo Alba Ballesteros</p>
+                <p>Juan Jose Mosquera Bermudez</p>
+                <p>Alejandro Quintero Beltran</p>
+                <p>David Elias Castro Ochoa</p>
+                <p>Julian Sanchez Pasaje</p>
+            </div>
+        </div>
+
+        <p class="copyright">
+            © 2026 Paw Team
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

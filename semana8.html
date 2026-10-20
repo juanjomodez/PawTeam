@@ -9,6 +9,7 @@
 </head>
 
 <body>
+
     <!-- HEADER -->
     <header>
         <div>
@@ -26,263 +27,275 @@
         </nav>
 
     </header>
+    <section class="entrada-header">
 
-    <main>
-        <!-- ENCABEZADO DE LA SEMANA -->
-        <section class="entrada-header">
-            <p>BITÁCORA DE DESARROLLO</p>
-            <h1>Semana 8</h1>
-            <h2>Graybox del Core Loop</h2>
+
+        <main>
+            <!-- ENCABEZADO DE LA SEMANA -->
+            <section class="entrada-header">
+                <p>BITÁCORA DE DESARROLLO</p>
+                <h1>Semana 8</h1>
+                <h2>Graybox del Core Loop</h2>
+                <p>
+                    Durante esta semana trabajamos en la construcción del primer
+                    graybox del Core Loop de Paw Team.
+                </p>
+
+            </section>
+
+            <div class="semana-portada">
+                <img src="img/semana8.jpg" alt="Semana 8 de Paw Team">
+            </div>
+            <!-- INTRODUCCIÓN -->
+            <section class="entrada">
+                <h2>¿Qué queríamos probar?</h2>
+                <p>
+                    El objetivo de esta semana fue construir el primer graybox jugable
+                    de nuestro Core Loop y comprobar que las principales acciones de
+                    Paw Team funcionaran dentro de una misma experiencia.
+
+                    Partíamos con una ventaja, ya que contábamos con los dos personajes
+                    principales, Lupe y Spike, junto con sus animaciones. Esto nos permitió
+                    enfocarnos en integrar sus movimientos, el mapa y las mecánicas
+                    principales para crear una primera versión jugable.
+                </p>
+            </section>
+
+            <!-- 01 LUMENS -->
+            <section class="desarrollo">
+                <div class="desarrollo-contenido">
+                    <span class="desarrollo-numero">01</span>
+                    <h2>Lumens</h2>
+                    <p>
+                        Los Lumens son la moneda principal de Paw Team. Los jugadores pueden encontrarlos
+                        mientras recorren el mapa y sirven para comprar objetos, conseguir mejoras o pagar
+                        algunas acciones dentro del juego, como recuperar la vida del personaje después de
+                        ser derrotado.
+                    </p>
+
+                    <p>
+                        Para implementarlos, creamos un objeto provisional que funciona como Lumen dentro
+                        del mapa. A este objeto le agregamos un Collider, un Rigidbody y el script
+                        <strong>LumenRecolectable</strong>. El Collider permite detectar cuando uno de los
+                        personajes toca el Lumen y el Rigidbody ayuda a que Unity pueda reconocer esta
+                        interacción. Cuando Lupe o Spike lo tocan, el programa revisa que el objeto tenga
+                        la etiqueta Player. Si reconoce que es uno de los jugadores, suma un Lumen al
+                        contador y elimina el objeto del escenario para evitar que pueda recogerse otra vez.
+                    </p>
+
+                    <p>
+                        El contador funciona con otro script llamado <strong>LumensContador</strong>. Este
+                        guarda la cantidad de Lumens que ha recogido el equipo y actualiza el número que
+                        aparece en pantalla. Por ejemplo, si el jugador tiene x5 y recoge otro Lumen,
+                        el contador cambia a x6.
+                    </p>
+                </div>
+
+                <div class="desarrollo-video">
+                    <video controls>
+                        <source src="videos/semana8-lumens.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </div>
+            </section>
+
+            <!-- 02 MAPA -->
+            <section class="desarrollo invertido">
+                <div class="desarrollo-contenido">
+                    <span class="desarrollo-numero">02</span>
+                    <h2>Mapa</h2>
+                    <p>
+                        Para crear el minimapa utilizamos una segunda cámara, independiente de la cámara principal del
+                        juego,
+                        configurada en modo Ortográfico y ubicada sobre el personaje con una rotación en X de 90°. Esta
+                        cámara
+                        permite mostrar el mundo desde una vista superior en tiempo real.
+                    </p>
+
+                    <p>
+                        En lugar de mostrar esta cámara directamente en pantalla, hicimos que renderizara su vista en
+                        una
+                        Render Texture. Luego, esta textura se muestra en el HUD mediante un Raw Image ubicado en una de
+                        las
+                        esquinas de la pantalla, permitiendo visualizar el entorno sin tener que crear un mapa
+                        manualmente.
+                    </p>
+
+                    <p>
+                        Para mantener la vista actualizada, creamos el script <strong>MinimapFollow</strong>, encargado
+                        de
+                        hacer
+                        que la cámara siga constantemente al jugador. El script actualiza su posición en cada frame
+                        utilizando
+                        un offset de altura para mantener la cámara sobre el personaje.
+                    </p>
+                </div>
+
+                <div class="desarrollo-video">
+                    <video controls>
+                        <source src="videos/semana8-mapa.mp4" type="video/mp4">
+                        Tu navegador no puede reproducir este video.
+                    </video>
+                </div>
+            </section>
+
+            <!-- 03 COOPERATIVO -->
+            <section class="desarrollo">
+                <div class="desarrollo-contenido">
+                    <span class="desarrollo-numero">03</span>
+                    <h2>Cooperativo</h2>
+                    <p>
+                        Para la parte cooperativa ya contábamos con un botón que, al ser presionado,
+                        eliminaba un cubo de cristal que protegía un saltarín. A partir de este elemento,
+                        agregamos un nuevo botón que, al pararse sobre él, hace que unas plataformas salgan
+                        para permitir el paso del jugador.
+                    </p>
+
+                    <p>
+                        El botón debe mantenerse presionado para que las plataformas permanezcan activas.
+                        Si el jugador se baja, las plataformas vuelven a su posición original. De esta
+                        forma, buscamos que los jugadores necesiten trabajar juntos para superar los
+                        obstáculos.
+                    </p>
+
+                    <p>
+                        Por ejemplo, uno de los jugadores debe mantenerse sobre el botón para que el otro
+                        pueda avanzar por las plataformas. Una vez que logra avanzar, puede activar el
+                        segundo botón para eliminar el cubo de cristal y permitir que ambos continúen.
+                    </p>
+                </div>
+
+                <div class="desarrollo-video">
+
+                    <video controls>
+
+                        <source src="videos/semana8-cooperativo.mp4" type="video/mp4">
+
+                        Tu navegador no puede reproducir este video.
+
+                    </video>
+
+                </div>
+
+            </section>
+
+
+            <!-- 04 RESULTADO FINAL -->
+
+            <section class="desarrollo-final">
+
+                <span class="desarrollo-numero">04</span>
+
+                <h2>Resultado final</h2>
+
+                <p class="descripcion-final">
+                    Finalmente reunimos los elementos trabajados durante la semana
+                    para probar el Core Loop en conjunto.
+                </p>
+
+
+                <!-- VIDEO FINAL -->
+
+                <div class="desarrollo-video">
+
+                    <video controls>
+
+                        <source src="videos/semana8-final.mp4" type="video/mp4">
+
+                        Tu navegador no puede reproducir este video.
+
+                    </video>
+
+                </div>
+
+
+                <!-- QUÉ OBSERVAMOS -->
+
+                <div class="resultado-texto">
+
+                    <h3>¿Qué observamos o descubrimos?</h3>
+
+                    <p>
+                        Durante las pruebas observamos que algunas mecánicas todavía necesitan ajustes para funcionar
+                        correctamente.
+                        El sistema de combate presentó problemas en su funcionamiento y las mecánicas cooperativas
+                        necesitan
+                        una mejor
+                        planificación para que sean retadoras, pero también intuitivas para los jugadores.
+                    </p>
+
+                    <p>
+                        También descubrimos que la organización del escenario influye bastante en la experiencia, por lo
+                        que
+                        algunos
+                        elementos deben distribuirse de una manera más clara. En general, las pruebas nos permitieron
+                        identificar estos
+                        problemas y entender qué aspectos debemos seguir trabajando, teniendo en cuenta que el juego
+                        todavía
+                        se encuentra
+                        en una etapa temprana de desarrollo.
+                    </p>
+
+                </div>
+
+
+                <!-- SIGUIENTE ITERACIÓN -->
+
+                <div class="resultado-texto">
+
+                    <h3>¿Qué cambiaremos en la siguiente versión?</h3>
+
+                    <ul>
+
+                        <li>
+                            Modificaremos el diseño de las Lumens para que se vean
+                            de manera más estética.
+                        </li>
+
+                        <li>
+                            Crearemos el mapa para el primer nivel con obstáculos
+                            y assets para decorarlo.
+                        </li>
+
+                        <li>
+                            Se modificará el funcionamiento del mapa para que se
+                            actualice a medida que el jugador avance.
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <div>
+                <img src="img/logo.png" alt="Logo de Paw Team">
+            </div>
+            <h2>Paw Team</h2>
             <p>
-                Durante esta semana trabajamos en la construcción del primer
-                graybox del Core Loop de Paw Team.
+                Bitácora de desarrollo del videojuego.
             </p>
 
-        </section>
+            <div class="integrantes">
+                <h3>Integrantes</h3>
+                <div class="integrantes-grid">
 
-        <!-- INTRODUCCIÓN -->
-        <section class="entrada">
-            <h2>¿Qué queríamos probar?</h2>
-            <p>
-                El objetivo de esta semana fue construir el primer graybox jugable
-                de nuestro Core Loop y comprobar que las principales acciones de
-                Paw Team funcionaran dentro de una misma experiencia.
-
-                Partíamos con una ventaja, ya que contábamos con los dos personajes
-                principales, Lupe y Spike, junto con sus animaciones. Esto nos permitió
-                enfocarnos en integrar sus movimientos, el mapa y las mecánicas
-                principales para crear una primera versión jugable.
+                    <p>Julian Esteban Cruz Camargo</p>
+                    <p>Juan Pablo Alba Ballesteros</p>
+                    <p>Juan Jose Mosquera Bermudez</p>
+                    <p>Alejandro Quintero Beltran</p>
+                    <p>David Elias Castro Ochoa</p>
+                    <p>Julian Sanchez Pasaje</p>
+                </div>
+            </div>
+            <p class="copyright">
+                © 2026 Paw Team
             </p>
-        </section>
-
-        <!-- 01 LUMENS -->
-        <section class="desarrollo">
-            <div class="desarrollo-contenido">
-                <span class="desarrollo-numero">01</span>
-                <h2>Lumens</h2>
-                <p>
-                    Los Lumens son la moneda principal de Paw Team. Los jugadores pueden encontrarlos
-                    mientras recorren el mapa y sirven para comprar objetos, conseguir mejoras o pagar
-                    algunas acciones dentro del juego, como recuperar la vida del personaje después de
-                    ser derrotado.
-                </p>
-
-                <p>
-                    Para implementarlos, creamos un objeto provisional que funciona como Lumen dentro
-                    del mapa. A este objeto le agregamos un Collider, un Rigidbody y el script
-                    <strong>LumenRecolectable</strong>. El Collider permite detectar cuando uno de los
-                    personajes toca el Lumen y el Rigidbody ayuda a que Unity pueda reconocer esta
-                    interacción. Cuando Lupe o Spike lo tocan, el programa revisa que el objeto tenga
-                    la etiqueta Player. Si reconoce que es uno de los jugadores, suma un Lumen al
-                    contador y elimina el objeto del escenario para evitar que pueda recogerse otra vez.
-                </p>
-
-                <p>
-                    El contador funciona con otro script llamado <strong>LumensContador</strong>. Este
-                    guarda la cantidad de Lumens que ha recogido el equipo y actualiza el número que
-                    aparece en pantalla. Por ejemplo, si el jugador tiene x5 y recoge otro Lumen,
-                    el contador cambia a x6.
-                </p>
-            </div>
-
-            <div class="desarrollo-video">
-                <video controls>
-                    <source src="videos/semana8-lumens.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </div>
-        </section>
-
-        <!-- 02 MAPA -->
-        <section class="desarrollo invertido">
-            <div class="desarrollo-contenido">
-                <span class="desarrollo-numero">02</span>
-                <h2>Mapa</h2>
-                <p>
-                    Para crear el minimapa utilizamos una segunda cámara, independiente de la cámara principal del
-                    juego,
-                    configurada en modo Ortográfico y ubicada sobre el personaje con una rotación en X de 90°. Esta
-                    cámara
-                    permite mostrar el mundo desde una vista superior en tiempo real.
-                </p>
-
-                <p>
-                    En lugar de mostrar esta cámara directamente en pantalla, hicimos que renderizara su vista en una
-                    Render Texture. Luego, esta textura se muestra en el HUD mediante un Raw Image ubicado en una de las
-                    esquinas de la pantalla, permitiendo visualizar el entorno sin tener que crear un mapa manualmente.
-                </p>
-
-                <p>
-                    Para mantener la vista actualizada, creamos el script <strong>MinimapFollow</strong>, encargado de
-                    hacer
-                    que la cámara siga constantemente al jugador. El script actualiza su posición en cada frame
-                    utilizando
-                    un offset de altura para mantener la cámara sobre el personaje.
-                </p>
-            </div>
-
-            <div class="desarrollo-video">
-                <video controls>
-                    <source src="videos/semana8-mapa.mp4" type="video/mp4">
-                    Tu navegador no puede reproducir este video.
-                </video>
-            </div>
-        </section>
-
-        <!-- 03 COOPERATIVO -->
-        <section class="desarrollo">
-            <div class="desarrollo-contenido">
-                <span class="desarrollo-numero">03</span>
-                <h2>Cooperativo</h2>
-                <p>
-                    Para la parte cooperativa ya contábamos con un botón que, al ser presionado,
-                    eliminaba un cubo de cristal que protegía un saltarín. A partir de este elemento,
-                    agregamos un nuevo botón que, al pararse sobre él, hace que unas plataformas salgan
-                    para permitir el paso del jugador.
-                </p>
-
-                <p>
-                    El botón debe mantenerse presionado para que las plataformas permanezcan activas.
-                    Si el jugador se baja, las plataformas vuelven a su posición original. De esta
-                    forma, buscamos que los jugadores necesiten trabajar juntos para superar los
-                    obstáculos.
-                </p>
-
-                <p>
-                    Por ejemplo, uno de los jugadores debe mantenerse sobre el botón para que el otro
-                    pueda avanzar por las plataformas. Una vez que logra avanzar, puede activar el
-                    segundo botón para eliminar el cubo de cristal y permitir que ambos continúen.
-                </p>
-            </div>
-
-            <div class="desarrollo-video">
-
-                <video controls>
-
-                    <source src="videos/semana8-cooperativo.mp4" type="video/mp4">
-
-                    Tu navegador no puede reproducir este video.
-
-                </video>
-
-            </div>
-
-        </section>
-
-
-        <!-- 04 RESULTADO FINAL -->
-
-        <section class="desarrollo-final">
-
-            <span class="desarrollo-numero">04</span>
-
-            <h2>Resultado final</h2>
-
-            <p class="descripcion-final">
-                Finalmente reunimos los elementos trabajados durante la semana
-                para probar el Core Loop en conjunto.
-            </p>
-
-
-            <!-- VIDEO FINAL -->
-
-            <div class="desarrollo-video">
-
-                <video controls>
-
-                    <source src="videos/semana8-final.mp4" type="video/mp4">
-
-                    Tu navegador no puede reproducir este video.
-
-                </video>
-
-            </div>
-
-
-            <!-- QUÉ OBSERVAMOS -->
-
-            <div class="resultado-texto">
-
-                <h3>¿Qué observamos o descubrimos?</h3>
-
-                <p>
-                    Durante las pruebas observamos que algunas mecánicas todavía necesitan ajustes para funcionar
-                    correctamente.
-                    El sistema de combate presentó problemas en su funcionamiento y las mecánicas cooperativas necesitan
-                    una mejor
-                    planificación para que sean retadoras, pero también intuitivas para los jugadores.
-                </p>
-
-                <p>
-                    También descubrimos que la organización del escenario influye bastante en la experiencia, por lo que
-                    algunos
-                    elementos deben distribuirse de una manera más clara. En general, las pruebas nos permitieron
-                    identificar estos
-                    problemas y entender qué aspectos debemos seguir trabajando, teniendo en cuenta que el juego todavía
-                    se encuentra
-                    en una etapa temprana de desarrollo.
-                </p>
-
-            </div>
-
-
-            <!-- SIGUIENTE ITERACIÓN -->
-
-            <div class="resultado-texto">
-
-                <h3>¿Qué cambiaremos en la siguiente versión?</h3>
-
-                <ul>
-
-                    <li>
-                        Modificaremos el diseño de las Lumens para que se vean
-                        de manera más estética.
-                    </li>
-
-                    <li>
-                        Crearemos el mapa para el primer nivel con obstáculos
-                        y assets para decorarlo.
-                    </li>
-
-                    <li>
-                        Se modificará el funcionamiento del mapa para que se
-                        actualice a medida que el jugador avance.
-                    </li>
-
-                </ul>
-
-            </div>
-
-        </section>
-
-    </main>
-
-    <!-- FOOTER -->
-    <footer>
-        <div>
-            <img src="img/logo.png" alt="Logo de Paw Team">
-        </div>
-        <h2>Paw Team</h2>
-        <p>
-            Bitácora de desarrollo del videojuego.
-        </p>
-
-        <div class="integrantes">
-            <h3>Integrantes</h3>
-            <div class="integrantes-grid">
-
-                <p>Julian Esteban Cruz Camargo</p>
-                <p>Juan Pablo Alba Ballesteros</p>
-                <p>Juan Jose Mosquera Bermudez</p>
-                <p>Alejandro Quintero Beltran</p>
-                <p>David Elias Castro Ochoa</p>
-                <p>Julian Sanchez Pasaje</p>
-            </div>
-        </div>
-        <p class="copyright">
-            © 2026 Paw Team
-        </p>
-    </footer>
+        </footer>
 </body>
 
 </html>
