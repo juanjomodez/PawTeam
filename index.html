@@ -225,15 +225,35 @@
                 Explora el mundo de Paw Team y disfruta de nuestra versión jugable.
             </p>
 
-            <div class="demo-contenido">
-                <iframe src="PawTeamWeb/index.html" title="Paw Team - Demo jugable" allow="fullscreen; autoplay"
-                    allowfullscreen>
-                </iframe>
+            <div class="demo-contenido" id="demo-contenido">
+
+                <div class="demo-inicio" id="demo-inicio">
+                    <h2>Paw Team</h2>
+                    <p>¿Estás listo para comenzar la aventura?</p>
+                    <button onclick="iniciarDemo()">Jugar</button>
+                </div>
+
             </div>
 
         </div>
 
     </section>
+
+    <script>
+        function iniciarDemo() {
+            const contenedor = document.getElementById("demo-contenido");
+
+            contenedor.innerHTML = `
+            <iframe
+                src="PawTeamWeb/index.html"
+                title="Paw Team - Demo jugable"
+                allow="fullscreen; autoplay"
+                allowfullscreen>
+            </iframe>
+        `;
+        }
+    </script>
+
 
 
 

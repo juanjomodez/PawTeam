@@ -331,29 +331,49 @@ header nav a:hover {
 }
 
 /* DESCRIPCION */
-#demo .demo-descripcion {
-    margin-bottom: 35px;
-    color: #FFFFFF;
-    line-height: 1.6;
+
+#demo .demo-contenido iframe {
+    width: 100%;
+    height: 562px;
+    border: none;
+    display: block;
 }
 
-/* CONTENIDO DE LA DEMO */
-#demo .demo-contenido {
-    max-width: 1000px;
-    min-height: 450px;
-    margin: 0 auto;
+#demo .demo-inicio {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(17, 28, 46, 0.9);
-    border: 2px solid #243044;
-    border-radius: 12px;
+    gap: 15px;
+    width: 100%;
+    min-height: 450px;
+    color: #FFFFFF;
+    text-align: center;
 }
 
-/* TEXTO INTERIOR */
-#demo .demo-contenido p {
-    font-size: 20px;
+#demo .demo-inicio h2 {
+    font-size: 36px;
+    margin: 0;
+}
+
+#demo .demo-inicio p {
+    font-size: 18px;
     color: #FFFFFF;
+}
+
+#demo .demo-inicio button {
+    padding: 12px 35px;
+    background-color: #e00000;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#demo .demo-inicio button:hover {
+    background-color: #b00000;
 }
 
 
